@@ -80,13 +80,13 @@
       <!-- Right Header Actions (CV Dropdown, Theme Toggle, CTA) -->
       <div class="hidden sm:flex items-center gap-3">
         
-        <!-- CV Dropdown -->
+        <!-- CV Dropdown
         <div class="relative">
           <button id="cvDropdownBtn" type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors border border-slate-200 dark:border-slate-700">
             <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
             Unduh CV
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-          </button>
+          </button> -->
 
           <!-- Dropdown Menu -->
           <div id="cvDropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 py-1.5 z-50">
@@ -153,14 +153,14 @@
           <a href="#contact" onclick="closeMobileNav()" class="hover:text-blue-600">Kontak</a>
         </nav>
 
-        <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">
+        <!-- <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">
           <button onclick="downloadCV('id'); closeMobileNav();" class="w-full text-center py-2.5 rounded-xl text-xs font-bold uppercase bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700">
             Unduh CV Indonesia (PDF)
           </button>
           <button onclick="downloadCV('en'); closeMobileNav();" class="w-full text-center py-2.5 rounded-xl text-xs font-bold uppercase bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700">
             Unduh CV English (PDF)
           </button>
-        </div>
+        </div> -->
       </div>
 
       <div class="pt-6">
@@ -264,22 +264,8 @@
 
               <!-- Main Central Tech Avatar Frame -->
               <div class="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full p-2 bg-gradient-to-tr from-blue-600 via-cyan-500 to-blue-400 shadow-2xl shadow-blue-500/30 flex items-center justify-center">
-                <div class="w-full h-full rounded-full bg-white dark:bg-slate-900 overflow-hidden flex flex-col items-center justify-center relative p-4 group">
-                  
-                  <!-- Vector Graphic Placeholder / Avatar -->
-                  <div class="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white text-3xl font-black shadow-inner mb-2">
-                    AF
-                  </div>
-                  <div class="text-center">
-                    <span class="block text-sm font-extrabold text-slate-900 dark:text-white">Aqil Fauzi</span>
-                    <span class="block text-[11px] font-medium text-blue-600 dark:text-blue-400">Politeknik Caltex Riau</span>
-                  </div>
-
-                  <!-- Overlay hint for custom photo -->
-                  <div class="absolute inset-0 bg-blue-900/80 backdrop-blur-xs flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity p-4 text-center">
-                    <span class="text-[11px] text-white font-medium">Bisa diganti foto profil Anda di <code class="font-mono">assets/profile.jpg</code></span>
-                  </div>
-
+                <div class="w-full h-full rounded-full bg-slate-900 overflow-hidden relative shadow-inner">
+                  <img src="assets/profile/profile.jpeg" alt="Aqil Fauzi" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center bg-blue-600 text-white font-black text-3xl\'>AF</div>';">
                 </div>
               </div>
 
