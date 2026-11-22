@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth" data-type="service">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="page-type" content="service">
+  <meta name="site-kind" content="software">
+  <title>Aqil Fauzi — Portofolio IT Support, Web Programmer & Network Administrator</title>
+  <meta name="description" content="Portofolio resmi Aqil Fauzi, lulusan D-4 Teknik Informatika Politeknik Caltex Riau. Berfokus pada IT Support, Fullstack Web Programming, dan Network Administration.">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+            darkBg: '#0b0f19',
+            darkCard: '#111827',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-50 dark:bg-darkBg text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 selection:bg-blue-600 selection:text-white">
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-darkBg/80 glass-nav border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center gap-2 group">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
+          AF
+        </div>
+        <div class="flex flex-col">
+          <span class="font-extrabold text-lg tracking-tight text-slate-900 dark:text-white leading-none">
+            Aqil<span class="text-blue-600">Fauzi</span>
+          </span>
+          <span class="text-[11px] font-medium text-slate-600 dark:text-slate-300 tracking-wider uppercase mt-0.5">
+            IT Support & Web
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600 dark:text-slate-300">
+        <a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Beranda</a>
+        <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Tentang Saya</a>
+        <a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Keahlian</a>
+        <a href="#portfolio" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Portofolio</a>
+        <a href="#education" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Pendidikan</a>
+        <a href="#experience" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Pengalaman</a>
+        <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Kontak</a>
+      </nav>
+
+      <!-- Right Header Actions (CV Dropdown, Theme Toggle, CTA) -->
+      <div class="hidden sm:flex items-center gap-3">
+        
+        <!-- CV Dropdown -->
+        <div class="relative">
+          <button id="cvDropdownBtn" type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors border border-slate-200 dark:border-slate-700">
+            <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            Unduh CV
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div id="cvDropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 py-1.5 z-50">
+            <a href="#" onclick="downloadCV('id'); return false;" class="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-blue-600">
+              <span class="w-2 h-2 rounded-full bg-red-500"></span>
+              CV Bahasa Indonesia (PDF)
+            </a>
+            <a href="#" onclick="downloadCV('en'); return false;" class="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-blue-600">
+              <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+              CV English Version (PDF)
+            </a>
+          </div>
+        </div>
+
+        <!-- Theme Toggler -->
+        <button id="themeToggle" type="button" aria-label="Toggle Theme" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-colors">
+          <span id="themeIcon">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          </span>
+        </button>
+
+        <!-- CTA Direct Contact -->
+        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-blue-600 text-white hover:bg-blue-700 shadow-md shadow-blue-500/20 transition-all hover:scale-105">
+          Hubungi Saya
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <button id="mobileThemeToggle" type="button" aria-label="Toggle Theme" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+          <span id="mobileThemeIcon">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          </span>
+        </button>
+        <button id="mobileMenuBtn" type="button" aria-label="Open Menu" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileNavDrawer" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm lg:hidden">
+    <div class="fixed right-0 top-0 bottom-0 w-80 max-w-full bg-white dark:bg-darkCard p-6 shadow-2xl flex flex-col justify-between overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-slate-200 dark:border-slate-800">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center">AF</div>
+            <span class="font-bold text-slate-900 dark:text-white">Aqil Fauzi</span>
+          </div>
+          <button id="closeMobileMenuBtn" class="p-2 text-slate-600 dark:text-slate-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+        </div>
+
+        <nav class="flex flex-col gap-4 mt-6 text-base font-semibold text-slate-700 dark:text-slate-200">
+          <a href="#home" onclick="closeMobileNav()" class="hover:text-blue-600">Beranda</a>
+          <a href="#about" onclick="closeMobileNav()" class="hover:text-blue-600">Tentang Saya</a>
+          <a href="#skills" onclick="closeMobileNav()" class="hover:text-blue-600">Keahlian</a>
+          <a href="#portfolio" onclick="closeMobileNav()" class="hover:text-blue-600">Portofolio</a>
+          <a href="#education" onclick="closeMobileNav()" class="hover:text-blue-600">Pendidikan</a>
+          <a href="#experience" onclick="closeMobileNav()" class="hover:text-blue-600">Pengalaman</a>
+          <a href="#contact" onclick="closeMobileNav()" class="hover:text-blue-600">Kontak</a>
+        </nav>
+
+        <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-3">
+          <button onclick="downloadCV('id'); closeMobileNav();" class="w-full text-center py-2.5 rounded-xl text-xs font-bold uppercase bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700">
+            Unduh CV Indonesia (PDF)
+          </button>
+          <button onclick="downloadCV('en'); closeMobileNav();" class="w-full text-center py-2.5 rounded-xl text-xs font-bold uppercase bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700">
+            Unduh CV English (PDF)
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-6">
+        <a href="#contact" onclick="closeMobileNav()" class="block w-full text-center py-3 rounded-xl text-sm font-bold uppercase bg-blue-600 text-white shadow-lg shadow-blue-500/25">
+          Hubungi Saya
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main class="pt-20">
+
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <section id="home" class="relative min-h-[calc(100vh-5rem)] flex items-center py-16 lg:py-24 overflow-hidden">
+      <!-- Ambient Radial Lighting -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 dark:bg-blue-600/15 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-glow"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-cyan-500/10 dark:bg-cyan-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Left Hero Content -->
+          <div class="lg:col-span-7 flex flex-col items-start text-left">
+            
+            <!-- Open to Work Beacon -->
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 mb-6">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              </span>
+              <span class="text-xs font-bold tracking-wide text-emerald-700 dark:text-emerald-400 uppercase">
+                Siap Magang & Kerja · IT Support & Web Programming
+              </span>
+            </div>
+
+            <!-- Main Headlines -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.15] mb-4">
+              Halo Semua 👋,<br>
+              Saya <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Aqil Fauzi</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl font-semibold text-slate-700 dark:text-slate-300 mb-4">
+              Lulusan D-4 Teknik Informatika · Politeknik Caltex Riau
+            </p>
+
+            <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-8 max-w-2xl">
+              Memiliki minat dan keahlian mendalam di bidang <span class="font-semibold text-slate-900 dark:text-white">Web Programming</span>, <span class="font-semibold text-slate-900 dark:text-white">Network Administration</span>, serta <span class="font-semibold text-slate-900 dark:text-white">IT Support & Troubleshooting</span>. Terbiasa menangani verifikasi data, pengelolaan aplikasi web, hingga memastikan kelancaran infrastruktur sistem dan operasional teknologi.
+            </p>
+
+            <!-- Action CTAs -->
+            <div class="flex flex-wrap items-center gap-4 mb-12">
+              <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/25 transition-all hover:scale-105">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                Hubungi Saya
+              </a>
+              <a href="#portfolio" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/60 transition-all hover:scale-105">
+                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                Lihat Portofolio →
+              </a>
+            </div>
+
+            <!-- Stat Metric Capsules -->
+            <div class="w-full grid grid-cols-3 gap-3 sm:gap-4 pt-6 border-t border-slate-200 dark:border-slate-800">
+              <div class="p-3.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700">
+                <div class="text-xl sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">6+</div>
+                <div class="text-[11px] sm:text-xs text-slate-600 dark:text-slate-300 font-medium mt-0.5">Proyek Selesai</div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700">
+                <div class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">D-4</div>
+                <div class="text-[11px] sm:text-xs text-slate-600 dark:text-slate-300 font-medium mt-0.5">Teknik Informatika</div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700">
+                <div class="text-xl sm:text-2xl font-extrabold text-emerald-600 dark:text-emerald-400">Aktif</div>
+                <div class="text-[11px] sm:text-xs text-slate-600 dark:text-slate-300 font-medium mt-0.5">Siap Magang / Kerja</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Hero Visual (Concentric Rings & Tech Aura Avatar) -->
+          <div class="lg:col-span-5 flex justify-center items-center">
+            <div class="relative w-72 h-72 sm:w-88 sm:h-88 flex items-center justify-center">
+              
+              <!-- Outer Orbit Ring -->
+              <div class="absolute inset-0 rounded-full border border-dashed border-blue-400/40 dark:border-blue-500/30 animate-orbit"></div>
+              
+              <!-- Inner Orbit Ring -->
+              <div class="absolute inset-4 rounded-full border border-blue-500/20 dark:border-blue-400/20 animate-orbit-reverse"></div>
+
+              <!-- Orbiting Badge Node (IT Support) -->
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow-lg border border-blue-200 dark:border-blue-800 text-[11px] font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                IT Support Specialist
+              </div>
+
+              <!-- Orbiting Badge Node (Web Dev) -->
+              <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-white dark:bg-slate-800 shadow-lg border border-cyan-200 dark:border-cyan-800 text-[11px] font-bold text-cyan-600 dark:text-cyan-400 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
+                Fullstack Web Dev
+              </div>
+
+              <!-- Main Central Tech Avatar Frame -->
+              <div class="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full p-2 bg-gradient-to-tr from-blue-600 via-cyan-500 to-blue-400 shadow-2xl shadow-blue-500/30 flex items-center justify-center">
+                <div class="w-full h-full rounded-full bg-white dark:bg-slate-900 overflow-hidden flex flex-col items-center justify-center relative p-4 group">
+                  
+                  <!-- Vector Graphic Placeholder / Avatar -->
+                  <div class="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white text-3xl font-black shadow-inner mb-2">
+                    AF
+                  </div>
+                  <div class="text-center">
+                    <span class="block text-sm font-extrabold text-slate-900 dark:text-white">Aqil Fauzi</span>
+                    <span class="block text-[11px] font-medium text-blue-600 dark:text-blue-400">Politeknik Caltex Riau</span>
+                  </div>
+
+                  <!-- Overlay hint for custom photo -->
+                  <div class="absolute inset-0 bg-blue-900/80 backdrop-blur-xs flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity p-4 text-center">
+                    <span class="text-[11px] text-white font-medium">Bisa diganti foto profil Anda di <code class="font-mono">assets/profile.jpg</code></span>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== 2. TENTANG SAYA (ABOUT) ==================== -->
+    <section id="about" class="py-20 bg-white dark:bg-slate-900/60 border-y border-slate-200/80 dark:border-slate-800/80 transition-colors">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/80 px-3.5 py-1.5 rounded-full border border-blue-200 dark:border-blue-900">
+            Profil & Pengantar
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-3 mb-4">
+            Tentang Saya
+          </h2>
+          <p class="text-base text-slate-600 dark:text-slate-300">
+            Mengenal lebih dekat dedikasi kerja, latar belakang akademik, dan keahlian yang siap saya kontribusikan untuk operasional teknologi di perusahaan Anda.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          
+          <!-- Left Column: Bio & Quick Connect -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <div class="bg-slate-50 dark:bg-slate-800/60 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-700/80">
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+                Ringkasan Profil
+              </h3>
+              <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                Saya lulusan <span class="font-bold text-slate-900 dark:text-white">D-4 Teknik Informatika dari Politeknik Caltex Riau</span> yang memiliki minat dan keahlian di bidang <span class="font-semibold text-blue-600 dark:text-blue-400">web programming</span> serta <span class="font-semibold text-blue-600 dark:text-blue-400">network administrator</span>.
+              </p>
+              <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                Terbiasa menangani <span class="font-semibold text-slate-900 dark:text-white">verifikasi data</span>, <span class="font-semibold text-slate-900 dark:text-white">pengelolaan aplikasi web</span>, hingga <span class="font-semibold text-slate-900 dark:text-white">troubleshooting perangkat lunak dan jaringan</span>. Berbekal pengalaman magang di industri teknologi dan instansi layanan publik, saya merupakan pribadi yang teliti, komunikatif, dan responsif.
+              </p>
+              <p class="text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
+                Siap berkontribusi aktif sebagai <span class="font-bold text-slate-900 dark:text-white">IT Support</span> untuk memastikan kelancaran operasional teknologi dan infrastruktur sistem di perusahaan melalui program <span class="text-blue-600 font-bold">SiapKerja MagangHub</span> maupun rekrutmen profesional.
+              </p>
+            </div>
+
+            <!-- Mari Terkoneksi Card with 1-Click Copy Email -->
+            <div class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-2xl border border-slate-200 dark:border-slate-700/80">
+              <h4 class="text-sm font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-4">
+                Mari Terkoneksi & Berkomunikasi
+              </h4>
+
+              <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-950 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                  </div>
+                  <div>
+                    <span class="block text-xs text-slate-600 dark:text-slate-300 font-medium">Email Resmi</span>
+                    <span class="block text-sm font-bold text-slate-900 dark:text-white font-mono">aqilfauzi2003@gmail.com</span>
+                  </div>
+                </div>
+
+                <button id="copyEmailBtn" onclick="copyEmail()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold uppercase bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition-colors border border-slate-300 dark:border-slate-700">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                  <span id="copyEmailText">Salin</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: 4 Value Offerings / Contributions -->
+          <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+            
+            <div class="p-5 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 shadow-xs">
+              <div class="w-9 h-9 rounded-lg bg-blue-100 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              </div>
+              <h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">
+                IT Support & Troubleshooting Cepat
+              </h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Menangani kendala hardware, sistem operasi, instalasi aplikasi, printer/periferal, serta keluhan teknis pengguna harian dengan cekatan.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 shadow-xs">
+              <div class="w-9 h-9 rounded-lg bg-cyan-100 dark:bg-cyan-950/80 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+              </div>
+              <h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">
+                Web Programming & Maintenance
+              </h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Membangun dan mengelola aplikasi web berbasis PHP, Laravel, JavaScript, dan MySQL dengan kode bersih, responsif, dan mudah dipelihara.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 shadow-xs">
+              <div class="w-9 h-9 rounded-lg bg-indigo-100 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+              </div>
+              <h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">
+                Network Administration & Monitoring
+              </h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Konfigurasi router MikroTik/Cisco, segmentasi VLAN, alokasi bandwidth, VPN remote access, serta monitoring uptime jaringan kantor.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 shadow-xs">
+              <div class="w-9 h-9 rounded-lg bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">
+                Verifikasi Data & Manajemen Berkas
+              </h4>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Keahlian teliti dalam mencocokkan kelengkapan berkas digital, validasi input data pengguna, audit log, serta rekapitulasi pelaporan berkala.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== 3. KEAHLIAN & TECH STACK ==================== -->
+    <section id="skills" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/80 px-3.5 py-1.5 rounded-full border border-blue-200 dark:border-blue-900">
+            Kompetensi Utama
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-3 mb-4">
+            Keahlian & Teknologi
+          </h2>
+          <p class="text-base text-slate-600 dark:text-slate-300">
+            Daftar keahlian teknis yang dikuasai secara terstruktur berdasarkan standar industri dan kebutuhan praktis dunia kerja.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Column 1: Web Programming -->
+          <div class="bg-white dark:bg-slate-800/80 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-5">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold">
+                  &lt;/&gt;
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Web Programming</h3>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                Pengembangan aplikasi web dinamis, modular, dan terstruktur dengan arsitektur MVC dan RESTful API.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-700/60">
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">Laravel</span>
+              <span class="skill-tag">JavaScript (ES6+)</span>
+              <span class="skill-tag">HTML5 & CSS3</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">Bootstrap</span>
+              <span class="skill-tag">RESTful API</span>
+            </div>
+          </div>
+
+          <!-- Column 2: Network & Infrastructure -->
+          <div class="bg-white dark:bg-slate-800/80 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-5">
+                <div class="w-10 h-10 rounded-xl bg-cyan-50 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Network & Infra</h3>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                Manajemen perangkat jaringan, routing, keamanan firewall, dan alokasi bandwidth terdistribusi.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-700/60">
+              <span class="skill-tag">MikroTik RouterOS</span>
+              <span class="skill-tag">Cisco IOS</span>
+              <span class="skill-tag">VLAN & Trunking</span>
+              <span class="skill-tag">Subnetting IPv4</span>
+              <span class="skill-tag">Routing OSPF/Static</span>
+              <span class="skill-tag">VPN & Failover</span>
+              <span class="skill-tag">Firewall NAT</span>
+            </div>
+          </div>
+
+          <!-- Column 3: IT Support & Troubleshooting -->
+          <div class="bg-white dark:bg-slate-800/80 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-5">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">IT Support & Ops</h3>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                Solusi tanggap kendala perangkat komputer, instalasi OS, periferal, helpdesk, dan pemeliharaan rutin.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-700/60">
+              <span class="skill-tag">Hardware Diagnostics</span>
+              <span class="skill-tag">Windows & Linux OS</span>
+              <span class="skill-tag">Printer / LAN Setup</span>
+              <span class="skill-tag">Verifikasi Berkas Data</span>
+              <span class="skill-tag">Data Backup & Recovery</span>
+              <span class="skill-tag">Ticketing Helpdesk</span>
+            </div>
+          </div>
+
+          <!-- Column 4: Database & Tools -->
+          <div class="bg-white dark:bg-slate-800/80 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-5">
+                <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Database & Tools</h3>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                Manajemen data relasional, pengujian jaringan, version control, dan perangkat kerja teknis sehari-hari.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-100 dark:border-slate-700/60">
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">Git & GitHub</span>
+              <span class="skill-tag">Wireshark</span>
+              <span class="skill-tag">Winbox</span>
+              <span class="skill-tag">Postman</span>
+              <span class="skill-tag">VS Code</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== 4. PORTOFOLIO PROYEK ==================== -->
+    <section id="portfolio" class="py-20 bg-slate-100/60 dark:bg-slate-900/40 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/80 px-3.5 py-1.5 rounded-full border border-blue-200 dark:border-blue-900">
+            Hasil Karya & Studi Kasus
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-3 mb-4">
+            Koleksi Portofolio Proyek
+          </h2>
+          <p class="text-base text-slate-600 dark:text-slate-300">
+            Daftar proyek aplikasi web, arsitektur jaringan, serta sistem penanganan kendala IT yang mencerminkan pemecahan masalah di dunia nyata.
+          </p>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
+          
+          <!-- Category Filter Tabs -->
+          <div class="flex flex-wrap items-center gap-2">
+            <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-blue-600 text-white shadow-xs transition-all" data-filter="all">
+              Semua
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition-all hover:bg-slate-50 dark:hover:bg-slate-700" data-filter="web">
+              Web Programming
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition-all hover:bg-slate-50 dark:hover:bg-slate-700" data-filter="network">
+              Network & Infra
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition-all hover:bg-slate-50 dark:hover:bg-slate-700" data-filter="support">
+              IT Support & System
+            </button>
+          </div>
+
+          <!-- Real-time Search Input -->
+          <div class="w-full md:w-80 relative">
+            <input type="text" id="projectSearchInput" placeholder="Cari proyek atau teknologi..." class="w-full pl-10 pr-4 py-2 rounded-xl text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+            <svg class="w-4 h-4 text-slate-600 dark:text-slate-300 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+
+        </div>
+
+        <!-- Dynamic Counter -->
+        <div class="flex items-center justify-between text-xs text-slate-600 dark:text-slate-300 font-medium mb-6">
+          <span id="projectCount">Menampilkan 6 dari 6 total proyek</span>
+          <span class="font-mono">Pembaruan: MagangHub 2026</span>
+        </div>
+
+        <!-- Projects Grid Container -->
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+
+        <!-- Empty State Fallback -->
+        <div id="noResults" class="hidden text-center py-16 bg-white dark:bg-slate-800/60 rounded-2xl border border-slate-200 dark:border-slate-700 p-8">
+          <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-1">Tidak ada proyek yang sesuai</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 mb-4">Coba cari kata kunci lain seperti Laravel, MikroTik, Failover, atau IT Support.</p>
+          <button onclick="resetFilters()" class="px-4 py-2 rounded-xl text-xs font-bold uppercase bg-blue-600 text-white hover:bg-blue-700">
+            Reset Semua Filter
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== 5. RIWAYAT PENDIDIKAN ==================== -->
+    <section id="education" class="py-20 bg-white dark:bg-slate-900/60 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/80 px-3.5 py-1.5 rounded-full border border-blue-200 dark:border-blue-900">
+            Latar Belakang Akademik
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-3 mb-4">
+            Riwayat Pendidikan
+          </h2>
+          <p class="text-base text-slate-600 dark:text-slate-300">
+            Fondasi keilmuan teknologi terapan yang menunjang kesiapan kerja praktis.
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-slate-50 dark:bg-slate-800/70 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-slate-700">
+              
+              <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-black text-xl shrink-0 shadow-md shadow-blue-500/20">
+                  PCR
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                    Politeknik Caltex Riau (PCR)
+                  </h3>
+                  <p class="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-0.5">
+                    D-4 Teknik Informatika (Sarjana Terapan Komputer / S.Tr.Kom)
+                  </p>
+                </div>
+              </div>
+
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 text-xs font-bold font-mono">
+                Pekanbaru, Riau
+              </div>
+            </div>
+
+            <div class="pt-6 space-y-4">
+              <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                Menyelesaikan program studi vokasi D-4 Teknik Informatika dengan kurikulum berbasis proyek (*project-based learning*). Memperoleh pemahaman mendalam pada rekayasa perangkat lunak, sistem administrasi jaringan komputer, manajemen basis data, serta standardisasi infrastruktur teknologi informasi.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                <div class="flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-300">
+                  <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                  <span>Praktikum Jaringan Komputer, Cisco & MikroTik</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-300">
+                  <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                  <span>Pemrograman Web Lanjutan & RESTful API</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-300">
+                  <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                  <span>Troubleshooting Hardware & Maintenance OS</span>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-300">
+                  <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                  <span>Integritas Basis Data & Verifikasi Dokumen</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== 6. PENGALAMAN KERJA & MAGANG ==================== -->
+    <section id="experience" class="py-20 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/80 px-3.5 py-1.5 rounded-full border border-blue-200 dark:border-blue-900">
+            Jejak Langkah Profesional
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-3 mb-4">
+            Pengalaman Kerja & Magang
+          </h2>
+          <p class="text-base text-slate-600 dark:text-slate-300">
+            Pengalaman nyata dalam menangani operasional sistem, pengembangan aplikasi web, dan troubleshooting di lingkungan industri.
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto space-y-6">
+          
+          <!-- Card 1 -->
+          <div class="bg-white dark:bg-slate-800/80 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm relative">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">Instansi Layanan Publik</span>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                  IT Support & Web Developer Intern
+                </h3>
+              </div>
+              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300">
+                Magang Industri
+              </span>
+            </div>
+
+            <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300 mt-4">
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"></span>
+                <span>Melakukan verifikasi data dan validasi berkas pemohon digital, memastikan akurasi data sebelum masuk ke sistem pusat.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"></span>
+                <span>Membantu pemeliharaan aplikasi web internal serta otomasi pembuatan laporan rekapitulasi data harian staf.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"></span>
+                <span>Memberikan penanganan troubleshooting cepat untuk keluhan perangkat staf (printer sharing, koneksi LAN, dan instalasi software kerja).</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white dark:bg-slate-800/80 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm relative">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <span class="text-xs font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-wider">Laboratorium Kampus PCR</span>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                  Network Administrator & Lab Assistant
+                </h3>
+              </div>
+              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300">
+                Asisten Praktikum
+              </span>
+            </div>
+
+            <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300 mt-4">
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-2 shrink-0"></span>
+                <span>Mengelola konfigurasi router MikroTik, alokasi bandwidth, dan segmentasi switch VLAN untuk 40+ unit PC praktikum.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-2 shrink-0"></span>
+                <span>Memantau stabilitas koneksi internet dan mendiagnosa gangguan kabel UTP serta routing loop di ruang server lab.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-2 shrink-0"></span>
+                <span>Membimbing mahasiswa junior dalam modul praktikum administrasi server Linux dan konfigurasi jaringan.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white dark:bg-slate-800/80 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 shadow-sm relative">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">Project-Based Solutions</span>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                  Freelance Web Programmer & Technical Specialist
+                </h3>
+              </div>
+              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300">
+                Freelance / Mandiri
+              </span>
+            </div>
+
+            <ul class="space-y-2.5 text-sm text-slate-600 dark:text-slate-300 mt-4">
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></span>
+                <span>Mengembangkan aplikasi web kustom untuk kebutuhan pencatatan inventaris dan sistem administrasi data UMKM lokal.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></span>
+                <span>Menyediakan konsultasi dan implementasi backup database berkala demi mencegah kehilangan data krusial.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== 7. SERTIFIKASI & KOMPETENSI ==================== -->
+    <section id="certifications" class="py-20 bg-slate-100/60 dark:bg-slate-900/40 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/80 px-3.5 py-1.5 rounded-full border border-blue-200 dark:border-blue-900">
+            Kualifikasi Resmi
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-3 mb-4">
+            Sertifikasi & Pelatihan
+          </h2>
+          <p class="text-base text-slate-600 dark:text-slate-300">
+            Sertifikat pelatihan teknis yang memvalidasi kapabilitas di bidang Jaringan, Pemrograman, dan IT Support.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 rounded-md bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900">
+                Jaringan Komputer
+              </span>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mt-4 mb-2">
+                MikroTik Certified Network Associate (MTCNA) Training
+              </h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                Routing, Subnetting, Bandwidth Management (Queues), Firewall NAT & Wireless Security.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-100 dark:border-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 flex items-center justify-between">
+              <span>MikroTik Academy PCR</span>
+              <span class="text-emerald-500 font-semibold">Tervalidasi ✓</span>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 rounded-md bg-cyan-50 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 border border-cyan-200 dark:border-cyan-900">
+                Web Development
+              </span>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mt-4 mb-2">
+                Junior Web Developer (Standar Kompetensi BNSP)
+              </h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                Implementasi kode terstruktur, integrasi database, antarmuka pengguna, dan penanganan bug aplikasi.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-100 dark:border-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 flex items-center justify-between">
+              <span>LSP Informatika / BNSP</span>
+              <span class="text-emerald-500 font-semibold">Kompeten ✓</span>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-900">
+                IT Operations
+              </span>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mt-4 mb-2">
+                Google IT Support Professional Specialization
+              </h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                Dasar troubleshooting sistem operasi, administrasi sistem, customer service teknis, dan keamanan IT.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-100 dark:border-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 flex items-center justify-between">
+              <span>Google / Coursera</span>
+              <span class="text-emerald-500 font-semibold">Selesai ✓</span>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-bold uppercase px-2.5 py-1 rounded-md bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-900">
+                Programming Dasar
+              </span>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white mt-4 mb-2">
+                Belajar Dasar Pemrograman Web & Logika Komputasi
+              </h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                Fondasi HTML5 semantik, CSS Flexbox/Grid responsif, manipulasi DOM JavaScript, dan pemecahan masalah algoritma.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-100 dark:border-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 flex items-center justify-between">
+              <span>Dicoding Indonesia</span>
+              <span class="text-emerald-500 font-semibold">Tervalidasi ✓</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== 8. HUBUNGI SAYA (KONTAK) ==================== -->
+    <section id="contact" class="py-20 bg-white dark:bg-slate-900/60 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/80 px-3.5 py-1.5 rounded-full border border-blue-200 dark:border-blue-900">
+            Terbuka Untuk Komunikasi
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-3 mb-4">
+            Hubungi Saya
+          </h2>
+          <p class="text-base text-slate-600 dark:text-slate-300">
+            Tertarik untuk merekrut, bekerja sama, atau mendiskusikan peluang program magang dan lowongan kerja? Silakan kirimkan pesan langsung melalui formulir atau kanal di bawah.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          
+          <!-- Left Column: Contact Details Cards -->
+          <div class="lg:col-span-5 space-y-4">
+            
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              </div>
+              <div>
+                <span class="text-xs text-slate-600 dark:text-slate-300 font-medium uppercase">Alamat Email</span>
+                <a href="mailto:aqilfauzi2003@gmail.com" class="block text-base font-bold text-slate-900 dark:text-white hover:text-blue-600 font-mono mt-0.5">
+                  aqilfauzi2003@gmail.com
+                </a>
+                <span class="text-xs text-slate-600 dark:text-slate-300 mt-1 block">Waktu respon tercepat &lt; 24 jam</span>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+              </div>
+              <div>
+                <span class="text-xs text-slate-600 dark:text-slate-300 font-medium uppercase">Kanal WhatsApp</span>
+                <span class="block text-base font-bold text-slate-900 dark:text-white mt-0.5">
+                  Tersedia untuk Diskusi Langsung
+                </span>
+                <button onclick="openWhatsAppDirect()" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline mt-1.5">
+                  Buka Chat WhatsApp →
+                </button>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              </div>
+              <div>
+                <span class="text-xs text-slate-600 dark:text-slate-300 font-medium uppercase">Lokasi Domisili</span>
+                <span class="block text-base font-bold text-slate-900 dark:text-white mt-0.5">
+                  Pekanbaru, Riau, Indonesia
+                </span>
+                <span class="text-xs text-slate-600 dark:text-slate-300 mt-1 block">Bersedia untuk sistem kerja On-site, Hybrid, maupun Remote</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Interactive Form -->
+          <div class="lg:col-span-7 bg-slate-50 dark:bg-slate-800/70 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-700">
+            <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="contactName" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1.5">Nama Anda / Instansi</label>
+                  <input type="text" id="contactName" required placeholder="Contoh: HRD PT. XYZ / Bpk. Fulan" class="w-full px-4 py-2.5 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                  <label for="contactEmail" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1.5">Alamat Email Balasan</label>
+                  <input type="email" id="contactEmail" required placeholder="email@perusahaan.com" class="w-full px-4 py-2.5 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+              </div>
+
+              <div>
+                <label for="contactSubject" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1.5">Subjek Keperluan</label>
+                <input type="text" id="contactSubject" required placeholder="Tawaran MagangHub / Peluang Kerja IT Support" class="w-full px-4 py-2.5 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+              </div>
+
+              <div>
+                <label for="contactMessage" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-1.5">Pesan Detail</label>
+                <textarea id="contactMessage" rows="4" required placeholder="Tuliskan rincian lowongan, deskripsi tugas, atau ajakan diskusi di sini..." class="w-full px-4 py-2.5 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+              </div>
+
+              <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                <button type="submit" class="flex-1 inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-bold text-sm bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-500/25 transition-all">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                  Kirim Pesan Email
+                </button>
+                <button type="button" onclick="openWhatsAppDirect()" class="inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-bold text-sm bg-emerald-600 hover:bg-emerald-700 text-white shadow-md shadow-emerald-500/20 transition-all">
+                  Chat WhatsApp
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-12 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 text-center sm:text-left transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <div>
+        <div class="flex items-center justify-center sm:justify-start gap-2">
+          <div class="w-7 h-7 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center text-xs">AF</div>
+          <span class="font-bold text-slate-900 dark:text-white">Aqil Fauzi</span>
+        </div>
+        <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">
+          D-4 Teknik Informatika Politeknik Caltex Riau · Siap Berkontribusi Aktif
+        </p>
+      </div>
+
+      <div class="text-xs text-slate-600 dark:text-slate-300 text-center sm:text-right">
+        <p>© 2026 Aqil Fauzi. Hak Cipta Dilindungi.</p>
+        <p class="mt-0.5">Dipersiapkan untuk Portfolio SiapKerja MagangHub & Karir Profesional.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ==================== PROJECT DETAIL MODAL ==================== -->
+  <div id="projectModal" class="hidden fixed inset-0 z-50 overflow-y-auto modal-backdrop" aria-labelledby="modalTitle" role="dialog" aria-modal="true">
+    <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:p-0">
+      
+      <!-- Backdrop Overlay -->
+      <div class="fixed inset-0 bg-slate-900/60 dark:bg-black/75 backdrop-blur-sm transition-opacity" onclick="closeProjectModal()"></div>
+
+      <!-- Modal Card Content -->
+      <div class="inline-block w-full max-w-2xl my-8 overflow-hidden text-left align-middle transition-all transform bg-white dark:bg-slate-800 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-700 relative z-10 p-6 sm:p-8 modal-content">
+        
+        <!-- Modal Top Bar -->
+        <div class="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-700">
+          <div class="flex items-center gap-2">
+            <span id="modalBadge" class="text-xs font-bold px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900">
+              Badge
+            </span>
+            <span id="modalCategory" class="text-xs text-slate-600 dark:text-slate-300 font-medium">Category</span>
+          </div>
+          <button type="button" onclick="closeProjectModal()" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="mt-5 space-y-6">
+          <h3 id="modalTitle" class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+            Judul Proyek
+          </h3>
+
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-2">Deskripsi Solusi</h4>
+            <p id="modalDescription" class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              Deskripsi lengkap proyek...
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-2">Fitur Utama & Implementasi</h4>
+            <ul id="modalFeatures" class="space-y-2">
+              <!-- Inserted dynamically -->
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-2">Teknologi yang Digunakan</h4>
+            <div id="modalTechStack" class="flex flex-wrap gap-2">
+              <!-- Inserted dynamically -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="mt-8 pt-4 border-t border-slate-200 dark:border-slate-700 flex justify-end">
+          <button type="button" onclick="closeProjectModal()" class="px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">
+            Tutup Dialog
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==================== FLOATING BACK TO TOP ==================== -->
+  <button id="backToTopBtn" onclick="scrollToTop()" aria-label="Back to Top" class="fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-blue-600 text-white shadow-xl shadow-blue-500/30 hover:bg-blue-700 transition-all duration-300 opacity-0 pointer-events-none translate-y-4 hover:scale-110">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+  </button>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
