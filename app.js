@@ -3,126 +3,71 @@
  * Fullstack Web Programmer, IT Support & Network Administrator
  */
 
-// --- 1. Project Data Store ---
+// --- 1. Project Data Store (4 Proyek Nyata) ---
 const projectsData = [
   {
     id: "proj-1",
-    title: "Sistem Informasi Manajemen Layanan Publik & Verifikasi Data",
-    category: "web",
-    badge: "Instansi Layanan Publik",
-    summary: "Aplikasi web terintegrasi untuk pengelolaan berkas, verifikasi data masyarakat secara real-time, dan otomasi laporan pelayanan publik.",
-    fullDescription: "Sistem ini dibangun untuk mengatasi kendala verifikasi berkas manual pada instansi layanan publik. Dilengkapi dengan antarmuka verifikator berkas, validasi input otomatis, rekapitulasi data berformat PDF/Excel, serta audit log aktivitas pengguna demi integritas data yang akuntabel.",
+    title: "Desain UI Dashboard Admin E-Commerce UMKM di Figma",
+    badge: "UI/UX Design",
+    summary: "Perancangan desain antarmuka pengguna (UI/UX) khusus dashboard admin untuk platform e-commerce UMKM, memfasilitasi pengelolaan produk, pesanan, dan analitika penjualan.",
+    fullDescription: "Proyek perancangan UI/UX berbasis Figma yang berfokus pada kebutuhan user admin platform e-commerce UMKM. Dirancang untuk memudahkan pemilik usaha memantau stok barang, memproses pesanan masuk, mengelola katalog produk, serta membaca ringkasan performa penjualan dengan antarmuka yang bersih, intuitif, dan responsif.",
     keyFeatures: [
-      "Verifikasi dokumen & berkas digital dengan status progres transparan (Pending, Terverifikasi, Revisi)",
-      "Role-based Access Control (Admin, Petugas Verifikasi, Pemohon)",
-      "Ekspor laporan rekapitulasi otomatis ke spreadsheet dan PDF",
-      "Pencarian cepat terindeks untuk ribuan entri data pemohon",
-      "Dashboard statistik harian dan mingguan efisiensi pelayanan"
+      "Perancangan antarmuka User Admin lengkap (Dashboard ringkasan, Manajemen Produk, Transaksi, dan Laporan)",
+      "Penerapan Design System konsisten (Color Palette, Typography, Reusable Components, dan Auto-Layout Figma)",
+      "Interactive Prototyping untuk mensimulasikan alur navigasi admin mulai dari validasi pesanan hingga status pengiriman",
+      "Penerapan prinsip Human-Centered Design untuk kemudahan operasional pengguna non-teknis",
+      "Penyusunan wireframe low-fidelity hingga high-fidelity mockup siap serah-terima ke tim developer"
     ],
-    techStack: ["PHP", "Laravel", "MySQL", "Tailwind CSS", "JavaScript", "REST API"],
-    demoUrl: "#",
-    githubUrl: "#",
-    categoryLabel: "Web Programming"
+    techStack: ["Figma", "UI/UX Design", "Wireframing", "Interactive Prototyping", "Design System"]
   },
   {
     id: "proj-2",
-    title: "Network Infrastructure & Server Monitoring Dashboard PCR",
-    category: "network",
-    badge: "Laboratorium PCR",
-    summary: "Perancangan arsitektur jaringan LAN/VLAN kampus dan integrasi dashboard pemantauan latensi, bandwidth, serta uptime server.",
-    fullDescription: "Mengkonfigurasi infrastruktur jaringan berbasis MikroTik RouterOS dan switch manageable di lingkungan laboratorium. Dilengkapi dengan monitoring jaringan menggunakan SNMP dan visualisasi utilisasi traffic secara real-time untuk mencegah bottleneck pada jam beban puncak praktikum.",
+    title: "Sistem Internal Staf BPJS Ketenagakerjaan: Manajemen Data Tenaga Kerja JMO",
+    badge: "Instansi Layanan Publik",
+    summary: "Pengembangan sistem internal staf BPJS Ketenagakerjaan untuk otomasi download & upload data Excel tenaga kerja pengguna JMO guna mengakuisisi dan memverifikasi kepesertaan aktif.",
+    fullDescription: "Sistem ini dikembangkan khusus untuk mempermudah staf internal BPJS Ketenagakerjaan dalam mengakuisisi dan memverifikasi tenaga kerja aktif pengguna aplikasi Jamsostek Mobile (JMO). Sistem ini memproses import dan export data Excel dalam volume besar secara efisien, melakukan validasi kelengkapan data kepesertaan, serta memastikan rekonsiliasi data berjalan akurat dan transparan.",
     keyFeatures: [
-      "Segmentasi jaringan dengan 4 VLAN berbeda (Staff, Mahasiswa, Server Lab, IoT Testbed)",
-      "Pengaturan Queue Bandwidth Management (PCQ & Simple Queue) yang adil",
-      "Firewall filter rules, NAT security, dan proteksi dari serangan DoS/Bruteforce",
-      "Pemantauan utilisasi bandwidth dan status up/down server via SNMP",
-      "Pencegahan routing loop dengan STP (Spanning Tree Protocol)"
+      "Modul Upload / Import data Excel tenaga kerja ribuan baris dengan validasi skema otomatis",
+      "Fitur Download / Export rekapitulasi data tenaga kerja aktif pengguna JMO ke format spreadsheet (.xlsx / .csv)",
+      "Verifikasi dan pencocokan otomatis data kepesertaan untuk mempercepat proses akuisisi tenaga kerja aktif",
+      "Pencatatan riwayat pemrosesan data (audit trail) untuk memastikan integritas dan keamanan data internal",
+      "Antarmuka cepat dan teroptimasi untuk meminimalisir waktu tunggu pengolahan berkas staf"
     ],
-    techStack: ["MikroTik RouterOS", "VLAN", "SNMP", "Winbox", "Linux Debian", "Grafana"],
-    demoUrl: "#",
-    githubUrl: "#",
-    categoryLabel: "Network & Infrastructure"
+    techStack: ["Laravel", "PHP", "Excel / PhpSpreadsheet", "MySQL", "JavaScript", "Bootstrap / Tailwind"]
   },
   {
     id: "proj-3",
-    title: "IT Helpdesk & Hardware/Software Asset Ticketing System",
-    category: "support",
-    badge: "IT Support & Operasional",
-    summary: "Sistem pencatatan tiket keluhan kendala teknis (PC, printer, jaringan lokal) serta manajemen inventaris aset perangkat kantor.",
-    fullDescription: "Dikembangkan untuk merampingkan proses pelaporan kendala IT harian staf kantor. Setiap komplain (printer macet, gangguan koneksi, bluescreen, lisensi software) tercatat dengan SLA respon yang jelas, history troubleshooting teknisi, dan pencatatan serial number perangkat.",
+    title: "Pengembangan Progressive Web App (PWA) Sistem Informasi Sekolah",
+    badge: "Web & Mobile PWA",
+    summary: "Transformasi sistem informasi sekolah berbasis PHP Yii2 menjadi Progressive Web App (PWA) yang dapat diinstal langsung di perangkat dan mendukung akses yang lebih cepat.",
+    fullDescription: "Mengembangkan fitur Progressive Web App (PWA) pada sistem informasi sekolah yang sudah berjalan dengan framework PHP Yii2. Integrasi PWA ini memungkinkan guru, staf, dan siswa mengakses sistem secara instan dari homescreen smartphone maupun desktop layaknya aplikasi native, dilengkapi caching pintar untuk meningkatkan kecepatan akses dan reliabilitas koneksi.",
     keyFeatures: [
-      "Pelaporan tiket troubleshooting dengan tingkat urgensi (Low, Medium, High, Critical)",
-      "Pencatatan riwayat penanganan kendala teknis (knowledge base solusi IT Support)",
-      "Katalogisasi aset perangkat keras (spesifikasi PC, monitor, printer, IP address)",
-      "Notifikasi status tiket otomatis ke email staf pemohon",
-      "Statistik rata-rata waktu penyelesaian kendala (MTTR / Mean Time to Resolution)"
+      "Implementasi Web App Manifest & Service Worker sehingga sistem dapat diinstal (Installable PWA)",
+      "Caching data pintar untuk mempercepat loading aset dan mendukung performa optimal pada jaringan lambat",
+      "Integrasi seamless dengan arsitektur backend framework PHP Yii2 yang sudah ada",
+      "User Experience (UX) responsif yang menyerupai kenyamanan aplikasi native di Android dan desktop",
+      "Pengurangan beban server melalui efisiensi penyimpanan cache sisi klien (browser cache)"
     ],
-    techStack: ["Web Programming", "PHP", "Bootstrap", "MySQL", "AJAX", "ITIL Best Practices"],
-    demoUrl: "#",
-    githubUrl: "#",
-    categoryLabel: "IT Support & System"
+    techStack: ["PHP", "Yii2", "Progressive Web App (PWA)", "Service Worker", "JavaScript", "MySQL"]
   },
   {
     id: "proj-4",
-    title: "Automated Dual-WAN Failover & VPN Gateway (MikroTik / Cisco)",
-    category: "network",
-    badge: "Network Engineering",
-    summary: "Implementasi redundansi koneksi internet otomatis (Failover) dan secure site-to-site VPN untuk menjamin kelancaran operasional.",
-    fullDescription: "Proyek rekayasa jaringan yang mengimplementasikan recursive routing failover menggunakan dua ISP berbeda. Jika ISP utama mengalami timeout, router otomatis mengalihkan koneksi ke ISP cadangan dalam hitungan detik tanpa memutus sesi kerja kritis pengguna.",
+    title: "Sistem Manajemen Usaha Cucian Mobil, Motor & Karpet",
+    badge: "Sistem Operasional Bisnis",
+    summary: "Pengembangan sistem web terintegrasi untuk pencatatan transaksi kasir (POS), pemantauan antrean cuci real-time, manajemen tarif layanan, dan rekapitulasi omzet usaha.",
+    fullDescription: "Sistem informasi berbasis web yang dibangun dengan framework Laravel dan PHP untuk mendigitalisasi operasional jasa cuci kendaraan dan karpet. Sistem ini menggantikan pembukuan manual dengan sistem kasir otomatis, pelacakan status antrean pengerjaan, manajemen tarif dinamis, serta pencetakan struk dan laporan keuangan periodik.",
     keyFeatures: [
-      "Recursive Routing Failover menggunakan check-gateway ping ke DNS publik",
-      "Secure WireGuard & L2TP/IPSec VPN untuk remote access aman teknisi luar kantor",
-      "QoS prioritas traffic untuk aplikasi video conference dan sistem database utama",
-      "Script automasi notifikasi peringatan pergantian link via bot Telegram",
-      "Pengujian packet loss dan latency under stress test"
+      "Manajemen antrean cuci kendaraan & karpet dengan status progres real-time",
+      "Katalog layanan dengan tarif fleksibel untuk Mobil, Motor, dan Karpet (per meter/satuan)",
+      "Modul Kasir / POS untuk pencatatan pembayaran cepat dan kalkulasi total biaya otomatis",
+      "Laporan rekapitulasi omzet dan pendapatan harian serta bulanan yang rapi dan terstruktur",
+      // "Manajemen data pelanggan untuk riwayat pemesanan dan peningkatan retensi layanan"
     ],
-    techStack: ["MikroTik", "Cisco IOS", "WireGuard VPN", "Routing Failover", "Bash Script"],
-    demoUrl: "#",
-    githubUrl: "#",
-    categoryLabel: "Network & Infrastructure"
-  },
-  {
-    id: "proj-5",
-    title: "Portal Verifikasi Berkas & Rekapitulasi Magang Mahasiswa",
-    category: "web",
-    badge: "Akademik & Mahasiswa",
-    summary: "Portal web untuk validasi berkas pendaftaran magang, pencocokan data instansi mitra, dan pelaporan progres logbook mingguan.",
-    fullDescription: "Solusi digitalisasi alur administrasi magang mahasiswa. Memungkinkan verifikator mengecek keaslian dokumen pendukung, mencocokkan bidang magang dengan kompetensi mahasiswa, serta mencetak rekapitulasi penilaian akhir secara terpusat.",
-    keyFeatures: [
-      "Validasi tipe file, ukuran, dan preview dokumen PDF langsung di browser",
-      "Formulir bertahap (multi-step registration) yang ramah pengguna",
-      "Modul verifikasi kilat dengan tombol persetujuan satu klik",
-      "Fitur catatan revisi yang langsung diteruskan ke dasbor pengguna",
-      "Database relasional ternormalisasi untuk menjamin integritas data"
-    ],
-    techStack: ["PHP", "CodeIgniter / Laravel", "PostgreSQL", "JavaScript", "HTML5/CSS3"],
-    demoUrl: "#",
-    githubUrl: "#",
-    categoryLabel: "Web Programming"
-  },
-  {
-    id: "proj-6",
-    title: "IoT Server Room Temperature & Environmental Monitoring",
-    category: "support",
-    badge: "Hardware & Monitoring",
-    summary: "Sistem monitoring suhu dan kelembaban ruang server mini dengan mikrokontroler ESP32 dan notifikasi alert dini.",
-    fullDescription: "Sistem pemantau kondisi fisik ruang server untuk mencegah overheating perangkat rackmount router dan switch. Mengirimkan data sensor suhu/kelembaban berkala ke dasbor web dan memicu notifikasi peringatan ke smartphone teknisi IT Support jika suhu melampaui batas aman.",
-    keyFeatures: [
-      "Sensor DHT22 presisi tinggi membaca temperatur & kelembaban real-time",
-      "Dasbor web visual dengan grafik tren suhu 24 jam terakhir",
-      "Threshold buzzer & notifikasi instan via Telegram Bot saat suhu > 28°C",
-      "Protokol komunikasi hemat daya MQTT untuk stabilitas transmisi data",
-      "Panduan SOP penanganan darurat ruang server bagi staf on-duty"
-    ],
-    techStack: ["ESP32", "MQTT", "C++ / Arduino", "Web Dashboard", "Chart.js", "IT Support SOP"],
-    demoUrl: "#",
-    githubUrl: "#",
-    categoryLabel: "IT Support & System"
+    techStack: ["Laravel", "PHP", "MySQL", "Tailwind CSS / Bootstrap", "JavaScript", "HTML5"]
   }
 ];
 
 // --- 2. State & DOM Elements ---
-let activeFilter = "all";
 let searchQuery = "";
 
 // Theme Management
@@ -161,25 +106,21 @@ function updateThemeIcon(isDark) {
 if (themeToggleBtn) themeToggleBtn.addEventListener("click", toggleTheme);
 if (mobileThemeToggleBtn) mobileThemeToggleBtn.addEventListener("click", toggleTheme);
 
-// --- 3. Projects Rendering & Filter/Search ---
+// --- 3. Projects Rendering & Search ---
 const projectsGrid = document.getElementById("projectsGrid");
 const projectCountEl = document.getElementById("projectCount");
 const noResultsEl = document.getElementById("noResults");
 const searchInput = document.getElementById("projectSearchInput");
-const filterButtons = document.querySelectorAll(".filter-btn");
 
 function renderProjects() {
   if (!projectsGrid) return;
 
+  const query = searchQuery.toLowerCase().trim();
   const filtered = projectsData.filter(proj => {
-    const matchesCategory = activeFilter === "all" || proj.category === activeFilter;
-    const query = searchQuery.toLowerCase().trim();
-    const matchesSearch = query === "" || 
+    return query === "" || 
       proj.title.toLowerCase().includes(query) ||
       proj.summary.toLowerCase().includes(query) ||
       proj.techStack.some(t => t.toLowerCase().includes(query));
-
-    return matchesCategory && matchesSearch;
   });
 
   // Update counter
@@ -204,10 +145,10 @@ function renderProjects() {
           <span class="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900">
             ${proj.badge}
           </span>
-          <span class="text-xs text-slate-600 dark:text-slate-300 font-medium">${proj.categoryLabel}</span>
+          <span class="text-xs text-slate-600 dark:text-slate-300 font-mono">Case Study</span>
         </div>
 
-        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2.5 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
           ${proj.title}
         </h3>
 
@@ -229,29 +170,13 @@ function renderProjects() {
           Detail Proyek
           <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
         </button>
-        <span class="text-xs text-slate-600 dark:text-slate-300 font-mono">Verified Case</span>
+        <span class="text-xs text-slate-600 dark:text-slate-300 font-mono">Verified</span>
       </div>
     </div>
   `).join("");
 }
 
-// Filter button events
-filterButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    filterButtons.forEach(b => {
-      b.classList.remove("bg-blue-600", "text-white", "shadow-sm");
-      b.classList.add("bg-white", "dark:bg-slate-800", "text-slate-700", "dark:text-slate-300", "border", "border-slate-200", "dark:border-slate-700");
-    });
-
-    btn.classList.add("bg-blue-600", "text-white", "shadow-sm");
-    btn.classList.remove("bg-white", "dark:bg-slate-800", "text-slate-700", "dark:text-slate-300", "border");
-
-    activeFilter = btn.dataset.filter;
-    renderProjects();
-  });
-});
-
-// Search input event with debounce
+// Search input event
 if (searchInput) {
   searchInput.addEventListener("input", (e) => {
     searchQuery = e.target.value;
@@ -260,20 +185,8 @@ if (searchInput) {
 }
 
 function resetFilters() {
-  activeFilter = "all";
   searchQuery = "";
   if (searchInput) searchInput.value = "";
-  
-  filterButtons.forEach(b => {
-    if (b.dataset.filter === "all") {
-      b.classList.add("bg-blue-600", "text-white", "shadow-sm");
-      b.classList.remove("bg-white", "dark:bg-slate-800", "text-slate-700", "dark:text-slate-300", "border");
-    } else {
-      b.classList.remove("bg-blue-600", "text-white", "shadow-sm");
-      b.classList.add("bg-white", "dark:bg-slate-800", "text-slate-700", "dark:text-slate-300", "border", "border-slate-200", "dark:border-slate-700");
-    }
-  });
-
   renderProjects();
 }
 
@@ -281,7 +194,6 @@ function resetFilters() {
 const projectModal = document.getElementById("projectModal");
 const modalTitle = document.getElementById("modalTitle");
 const modalBadge = document.getElementById("modalBadge");
-const modalCategory = document.getElementById("modalCategory");
 const modalDescription = document.getElementById("modalDescription");
 const modalFeatures = document.getElementById("modalFeatures");
 const modalTechStack = document.getElementById("modalTechStack");
@@ -292,7 +204,6 @@ function openProjectModal(projectId) {
 
   modalTitle.textContent = project.title;
   modalBadge.textContent = project.badge;
-  modalCategory.textContent = project.categoryLabel;
   modalDescription.textContent = project.fullDescription;
 
   modalFeatures.innerHTML = project.keyFeatures.map(f => `
@@ -386,22 +297,9 @@ function closeMobileNav() {
   }
 }
 
-// --- 8. Contact Form Handler ---
-function handleContactSubmit(e) {
-  e.preventDefault();
-  const name = document.getElementById("contactName").value;
-  const email = document.getElementById("contactEmail").value;
-  const subject = document.getElementById("contactSubject").value;
-  const message = document.getElementById("contactMessage").value;
-
-  const mailtoBody = encodeURIComponent(`Halo Aqil Fauzi,\n\nSaya ${name} (${email}) menghubungi Anda mengenai:\n\n${message}`);
-  const mailtoSubject = encodeURIComponent(`[Portofolio SiapKerja] ${subject}`);
-  
-  window.location.href = `mailto:aqilfauzi2003@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-}
-
+// --- 8. WhatsApp Direct ---
 function openWhatsAppDirect() {
-  const waNumber = "6282288888888"; // User can customize with real WhatsApp
+  const waNumber = "6281910322466";
   const text = encodeURIComponent("Halo Aqil Fauzi, saya melihat portofolio Anda di SiapKerja / Web dan tertarik untuk berdiskusi mengenai peluang magang / kerja IT Support & Web Programming.");
   window.open(`https://wa.me/${waNumber}?text=${text}`, "_blank");
 }
